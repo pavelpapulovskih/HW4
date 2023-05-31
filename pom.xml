@@ -57,6 +57,20 @@
                     <target>17</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>8.5.13</version>
+                <configuration>
+                    <user>user</user>
+                    <password>password</password>
+                    <schemas>
+                        <schema>schemaName</schema>
+                    </schemas>
+                    <url>jdbc:sqlite:connectiontest.db</url>
+                    <locations>filesystem:db/migration</locations>
+                </configuration>
+            </plugin>
 
         </plugins>
     </build>
