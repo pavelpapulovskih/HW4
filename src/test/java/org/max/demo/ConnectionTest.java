@@ -12,10 +12,16 @@ public class ConnectionTest {
     @BeforeAll
     static void init() throws SQLException {
         connect("connectiontest.db");
-        createTable("CREATE TABLE IF NOT EXISTS employees (\n"
+        createTable("CREATE TABLE IF NOT EXISTS employee_info\n" +
+                "(id integer PRIMARY KEY ,\n" +
+                "first_name text NOT NULL,\n" +
+                "last_name text NOT NULL,\n" +
+                "phone_number text NOT NULL);");
+        createTable("CREATE TABLE IF NOT EXISTS employee (\n"
                 + " id integer PRIMARY KEY,\n"
                 + " name text NOT NULL,\n"
-                + " capacity real\n"
+                + " capacity real,\n"
+                + " info_id integer NOT NULL\n"
                 + ");");
         insertValue("MAX",100);
         insertValue("JAR",110);
@@ -43,12 +49,13 @@ public class ConnectionTest {
         }
     }
 
-    private static void insertValue(String name, double capacity) {
-        String sql = "INSERT INTO employees(name, capacity) VALUES(?,?)";
+    private static void insertValue(String name, double capacity, Integer info) {
+        String sql = "INSERT INTO employee(name, capacity, info) VALUES(?,?, ?)";
         try{
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, name);
             pstmt.setDouble(2, capacity);
+            pstmt.setInt(3, info);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
