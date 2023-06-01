@@ -1,0 +1,9 @@
+CREATE TABLE client
+(client_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+ first_name VARCHAR(30) NOT NULL,
+ last_name VARCHAR(35) NOT NULL,
+ phone_number VARCHAR(20) NOT NULL,
+ district VARCHAR(15) NOT NULL,
+ street VARCHAR(25) NOT NULL,
+ house INT NOT NULL,
+ apartment INT NOT NULL);

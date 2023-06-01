@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS employees2 (id integer PRIMARY KEY, name text NOT NULL, capacity real);

@@ -1,0 +1,7 @@
+CREATE TABLE employee
+(employee_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+ first_name VARCHAR(30) NOT NULL,
+ last_name VARCHAR(35) NOT NULL,
+ phone_number VARCHAR(20) NOT NULL,
+ portion VARCHAR(30) NOT NULL
+ );

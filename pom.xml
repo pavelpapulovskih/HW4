@@ -62,16 +62,27 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>8.5.13</version>
                 <configuration>
-                    <user>user</user>
+                    <baselineOnMigrate>true</baselineOnMigrate>
+                    <!--<user>user</user>
                     <password>password</password>
                     <schemas>
                         <schema>schemaName</schema>
                     </schemas>
-                    <url>jdbc:sqlite:connectiontest.db</url>
-                    <locations>filesystem:db/migration</locations>
+
+                    -->
+                    <url>jdbc:sqlite:bank.db</url>
+                    <locations>filesystem:db/demo/migration</locations>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
