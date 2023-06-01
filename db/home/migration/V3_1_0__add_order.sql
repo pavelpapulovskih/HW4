@@ -1,36 +1,36 @@
 CREATE TABLE orders
-(order_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+(order_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
  customer_id INT NOT NULL,
- date_get TIMESTAMP NOT NULL,  # the time when orders are gotten from customers
+ date_get TIMESTAMP NOT NULL,
      FOREIGN KEY (customer_id) REFERENCES customers (customer_id));
 
 INSERT INTO orders(customer_id, date_get) VALUES
-(1, NOW());
+(1, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(2, NOW());
+(2, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(3, NOW());
+(3, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(4, NOW());
+(4, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(5, NOW());
+(5, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(6, NOW());
+(6, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(7, NOW());
+(7, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(8, NOW());
+(8, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(9, NOW());
+(9, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(10, NOW());
+(10, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(11, NOW());
+(11, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(12, NOW());
+(12, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(13, NOW());
+(13, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(14, NOW());
+(14, date('now'));
 INSERT INTO orders(customer_id, date_get) VALUES
-(15, NOW());
+(15, date('now'));

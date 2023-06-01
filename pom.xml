@@ -70,16 +70,16 @@
                     </schemas>
 
                     -->
-                    <url>jdbc:sqlite:bank.db</url>
-                    <locations>filesystem:db/demo/migration</locations>
+                    <url>jdbc:sqlite:demo2.db</url>
+                    <locations>filesystem:db/home/migration</locations>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>16</source>
-                    <target>16</target>
+                    <source>17</source>
+                    <target>17</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>

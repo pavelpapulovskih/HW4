@@ -1,7 +1,7 @@
 CREATE TABLE delivery
-(delivery_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
- order_id INT UNIQUE NOT NULL,
- courier_id INT NOT NULL,
+(delivery_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+ order_id INTEGER UNIQUE NOT NULL,
+ courier_id INTEGER NOT NULL,
  date_arrived TIMESTAMP UNIQUE,
      taken VARCHAR(3) NOT NULL,
 payment_method VARCHAR(4),
@@ -11,7 +11,7 @@ FOREIGN KEY (courier_id) REFERENCES courier(courier_id));
 
 
 
-INSERT INTO delivery_list VALUES
+INSERT INTO delivery VALUES
 (1, 1, 3, '2021-02-26 17:59:15', 'Yes', 'Cash'),
 (2, 2, 4, '2021-02-26 18:01:05', 'Yes', 'Card'),
 (3, 3, 1, '2021-02-26 18:04:36', 'Yes', 'Cash'),

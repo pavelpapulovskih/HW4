@@ -5,6 +5,6 @@ capacity real,
 info_id integer NOT NULL
 );
 
-INSERT INTO employees(name, capacity, info_id) VALUES(?,?,?);
-INSERT INTO employees(name, capacity, info_id) VALUES(?,?,?);
-INSERT INTO employees(name, capacity, info_id) VALUES(?,?,?);
+INSERT INTO employee(id, name, capacity, info_id) VALUES(1,'max',100, 1);
+INSERT INTO employee(id, name, capacity, info_id) VALUES(2,'leo',200,2);
+INSERT INTO employee(id, name, capacity, info_id) VALUES(3,'jack',300,3);

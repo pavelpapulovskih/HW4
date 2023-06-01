@@ -13,7 +13,7 @@ public class ConnectionTest {
     static void init() throws SQLException {
         connect("connectiontest.db");
         createTable("CREATE TABLE IF NOT EXISTS employee_info\n" +
-                "(id integer PRIMARY KEY ,\n" +
+                "(id integer PRIMARY KEY,\n" +
                 "first_name text NOT NULL,\n" +
                 "last_name text NOT NULL,\n" +
                 "phone_number text NOT NULL);");
@@ -23,9 +23,12 @@ public class ConnectionTest {
                 + " capacity real,\n"
                 + " info_id integer NOT NULL\n"
                 + ");");
-        insertValue("MAX",100);
-        insertValue("JAR",110);
-        insertValue("IAN",90);
+        insertEmployeeInfo(1,"Иван", "Иванов", "+7 927 0000001");
+        insertEmployeeInfo(2,"Петр", "Петров", "+7 927 0000002");
+        insertEmployeeInfo(3,"Сидор", "Сидоров", "+7 927 0000003");
+        insertEmployeeValue(1,"MAX",100,1);
+        insertEmployeeValue(2,"JAR",110,2);
+        insertEmployeeValue(3,"IAN",90,3);
     }
 
 
@@ -49,13 +52,28 @@ public class ConnectionTest {
         }
     }
 
-    private static void insertValue(String name, double capacity, Integer info) {
-        String sql = "INSERT INTO employee(name, capacity, info) VALUES(?,?, ?)";
+    private static void insertEmployeeInfo(Integer id, String firstName, String lastName, String phone) {
+        String sql = "INSERT INTO employee_info(id, first_name, last_name, phone_number) VALUES(?,?,?,?)";
         try{
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, name);
-            pstmt.setDouble(2, capacity);
-            pstmt.setInt(3, info);
+            pstmt.setInt(1, id);
+            pstmt.setString(2, firstName);
+            pstmt.setString(3, lastName);
+            pstmt.setString(4, phone);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private static void insertEmployeeValue(Integer id, String name, double capacity, Integer info) {
+        String sql = "INSERT INTO employee(id, name, capacity, info_id) VALUES(?,?,?,?)";
+        try{
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            pstmt.setString(2, name);
+            pstmt.setDouble(3, capacity);
+            pstmt.setInt(4, info);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -84,10 +102,13 @@ public class ConnectionTest {
 
     @AfterAll
     static void close() throws SQLException {
-        String sql = "DELETE FROM employees";
+        String sqlDeleteEmployee = "DELETE FROM employee";
+        String sqlDeleteInfo = "DELETE FROM employee_info";
+
         try {
             Statement stmt  = connection.createStatement();
-            stmt.execute(sql);
+            stmt.execute(sqlDeleteEmployee);
+            stmt.execute(sqlDeleteInfo);
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
