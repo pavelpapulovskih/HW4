@@ -6,6 +6,8 @@ CREATE TABLE debit
  percent INT NOT NULL,
  status VARCHAR(30) NOT NULL,
  number VARCHAR(30) NOT NULL,
- emploee_id INT NOT NULL,
- FOREIGN KEY (emploee_id) REFERENCES employee (employee_id)
+ employee_id INT NOT NULL,
+ client_id INT NOT NULL,
+ FOREIGN KEY (employee_id) REFERENCES employee (employee_id),
+ FOREIGN KEY (client_id) REFERENCES client (client_id)
 );
