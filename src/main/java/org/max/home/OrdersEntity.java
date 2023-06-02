@@ -19,7 +19,7 @@ public class OrdersEntity {
         this.orderId = orderId;
     }
 
-    @Basic
+    
     @Column(name = "date_get")
     public String getDateGet() {
         return dateGet;

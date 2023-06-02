@@ -22,7 +22,7 @@ public class EmployeeEntity {
         this.employeeId = employeeId;
     }
 
-    @Basic
+    
     @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
@@ -32,7 +32,7 @@ public class EmployeeEntity {
         this.firstName = firstName;
     }
 
-    @Basic
+    
     @Column(name = "last_name")
     public String getLastName() {
         return lastName;
@@ -42,7 +42,7 @@ public class EmployeeEntity {
         this.lastName = lastName;
     }
 
-    @Basic
+    
     @Column(name = "phone_number")
     public String getPhoneNumber() {
         return phoneNumber;
@@ -52,7 +52,7 @@ public class EmployeeEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    @Basic
+    
     @Column(name = "portion")
     public String getPortion() {
         return portion;

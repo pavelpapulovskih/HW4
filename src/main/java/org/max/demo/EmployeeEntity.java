@@ -20,7 +20,6 @@ public class EmployeeEntity {
         this.id = id;
     }
 
-    @Basic
     @Column(name = "name")
     public String getName() {
         return name;
@@ -30,7 +29,6 @@ public class EmployeeEntity {
         this.name = name;
     }
 
-    @Basic
     @Column(name = "capacity")
     public Double getCapacity() {
         return capacity;
@@ -40,7 +38,6 @@ public class EmployeeEntity {
         this.capacity = capacity;
     }
 
-    @Basic
     @Column(name = "info_id")
     public short getInfoId() {
         return infoId;

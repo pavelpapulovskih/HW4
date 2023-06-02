@@ -24,7 +24,7 @@ public class CreditEntity {
         this.creditId = creditId;
     }
 
-    @Basic
+    
     @Column(name = "balance")
     public String getBalance() {
         return balance;
@@ -34,7 +34,7 @@ public class CreditEntity {
         this.balance = balance;
     }
 
-    @Basic
+    
     @Column(name = "open_date")
     public String getOpenDate() {
         return openDate;
@@ -44,7 +44,7 @@ public class CreditEntity {
         this.openDate = openDate;
     }
 
-    @Basic
+    
     @Column(name = "close_date")
     public String getCloseDate() {
         return closeDate;
@@ -54,7 +54,7 @@ public class CreditEntity {
         this.closeDate = closeDate;
     }
 
-    @Basic
+    
     @Column(name = "summ")
     public String getSumm() {
         return summ;
@@ -64,7 +64,7 @@ public class CreditEntity {
         this.summ = summ;
     }
 
-    @Basic
+    
     @Column(name = "number")
     public String getNumber() {
         return number;
@@ -74,7 +74,7 @@ public class CreditEntity {
         this.number = number;
     }
 
-    @Basic
+    
     @Column(name = "status")
     public String getStatus() {
         return status;

@@ -24,7 +24,7 @@ public class DebitEntity {
         this.debitId = debitId;
     }
 
-    @Basic
+    
     @Column(name = "type_name")
     public String getTypeName() {
         return typeName;
@@ -34,7 +34,7 @@ public class DebitEntity {
         this.typeName = typeName;
     }
 
-    @Basic
+    
     @Column(name = "balance")
     public String getBalance() {
         return balance;
@@ -44,7 +44,7 @@ public class DebitEntity {
         this.balance = balance;
     }
 
-    @Basic
+    
     @Column(name = "open_date")
     public String getOpenDate() {
         return openDate;
@@ -54,7 +54,7 @@ public class DebitEntity {
         this.openDate = openDate;
     }
 
-    @Basic
+    
     @Column(name = "percent")
     public String getPercent() {
         return percent;
@@ -64,7 +64,7 @@ public class DebitEntity {
         this.percent = percent;
     }
 
-    @Basic
+    
     @Column(name = "status")
     public String getStatus() {
         return status;
@@ -74,7 +74,7 @@ public class DebitEntity {
         this.status = status;
     }
 
-    @Basic
+    
     @Column(name = "number")
     public String getNumber() {
         return number;

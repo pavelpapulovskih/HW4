@@ -31,7 +31,7 @@ public class OrdersProductsEntity {
         this.productId = productId;
     }
 
-    @Basic
+    
     @Column(name = "quantity")
     public short getQuantity() {
         return quantity;

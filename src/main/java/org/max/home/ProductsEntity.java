@@ -20,7 +20,7 @@ public class ProductsEntity {
         this.productId = productId;
     }
 
-    @Basic
+    
     @Column(name = "menu_name")
     public String getMenuName() {
         return menuName;
@@ -30,7 +30,7 @@ public class ProductsEntity {
         this.menuName = menuName;
     }
 
-    @Basic
+    
     @Column(name = "price")
     public String getPrice() {
         return price;

@@ -21,7 +21,7 @@ public class CurrentEntity {
         this.currentId = currentId;
     }
 
-    @Basic
+    
     @Column(name = "balance")
     public String getBalance() {
         return balance;
@@ -31,7 +31,7 @@ public class CurrentEntity {
         this.balance = balance;
     }
 
-    @Basic
+    
     @Column(name = "open_date")
     public String getOpenDate() {
         return openDate;
@@ -41,7 +41,7 @@ public class CurrentEntity {
         this.openDate = openDate;
     }
 
-    @Basic
+    
     @Column(name = "number")
     public String getNumber() {
         return number;

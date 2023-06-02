@@ -25,7 +25,7 @@ public class CustomersEntity {
         this.customerId = customerId;
     }
 
-    @Basic
+    
     @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
@@ -35,7 +35,7 @@ public class CustomersEntity {
         this.firstName = firstName;
     }
 
-    @Basic
+    
     @Column(name = "last_name")
     public String getLastName() {
         return lastName;
@@ -45,7 +45,7 @@ public class CustomersEntity {
         this.lastName = lastName;
     }
 
-    @Basic
+    
     @Column(name = "phone_number")
     public String getPhoneNumber() {
         return phoneNumber;
@@ -55,7 +55,7 @@ public class CustomersEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    @Basic
+    
     @Column(name = "district")
     public String getDistrict() {
         return district;
@@ -65,7 +65,7 @@ public class CustomersEntity {
         this.district = district;
     }
 
-    @Basic
+    
     @Column(name = "street")
     public String getStreet() {
         return street;
@@ -75,7 +75,7 @@ public class CustomersEntity {
         this.street = street;
     }
 
-    @Basic
+    
     @Column(name = "house")
     public String getHouse() {
         return house;
@@ -85,7 +85,7 @@ public class CustomersEntity {
         this.house = house;
     }
 
-    @Basic
+    
     @Column(name = "apartment")
     public String getApartment() {
         return apartment;

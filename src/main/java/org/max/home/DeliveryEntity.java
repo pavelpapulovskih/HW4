@@ -21,7 +21,7 @@ public class DeliveryEntity {
         this.deliveryId = deliveryId;
     }
 
-    @Basic
+    
     @Column(name = "date_arrived")
     public String getDateArrived() {
         return dateArrived;
@@ -31,7 +31,7 @@ public class DeliveryEntity {
         this.dateArrived = dateArrived;
     }
 
-    @Basic
+    
     @Column(name = "taken")
     public String getTaken() {
         return taken;
@@ -41,7 +41,7 @@ public class DeliveryEntity {
         this.taken = taken;
     }
 
-    @Basic
+    
     @Column(name = "payment_method")
     public String getPaymentMethod() {
         return paymentMethod;
