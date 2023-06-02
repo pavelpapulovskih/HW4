@@ -10,6 +10,15 @@ public class EmployeeEntity {
     private Double capacity;
     private short infoId;
 
+    public EmployeeEntity(){}
+
+    public EmployeeEntity(Short id, String name, Double capacity, short infoId) {
+        this.id = id;
+        this.name = name;
+        this.capacity = capacity;
+        this.infoId = infoId;
+    }
+
     @Id
     @Column(name = "id")
     public Short getId() {
