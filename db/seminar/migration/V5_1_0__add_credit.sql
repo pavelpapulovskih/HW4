@@ -11,3 +11,6 @@ CREATE TABLE credit
  FOREIGN KEY (employee_id) REFERENCES employee (employee_id),
  FOREIGN KEY (client_id) REFERENCES client (client_id)
 );
+
+INSERT INTO credit(credit_id, balance, open_date, close_date, summ, status, number, employee_id, client_id)
+values (1,  '1000 rub', '2023-02-01 00:00:00', '2050-02-01 00:00:00', '1000000000',  'открыт', '80950100000000000777', 2, 3);

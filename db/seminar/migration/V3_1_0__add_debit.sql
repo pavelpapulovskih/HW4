@@ -11,3 +11,6 @@ CREATE TABLE debit
  FOREIGN KEY (employee_id) REFERENCES employee (employee_id),
  FOREIGN KEY (client_id) REFERENCES client (client_id)
 );
+
+INSERT INTO debit(debit_id, type_name, balance, open_date, percent, status, number, employee_id, client_id)
+values (1, 'Повышенный', '1000 rub', '2023-02-01 00:00:00', '10',  'открыт', '80350100000000000017', 1, 1);

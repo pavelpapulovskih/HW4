@@ -10,18 +10,18 @@ CREATE TABLE customers
 
 
 INSERT INTO customers(first_name, last_name, phone_number, district, street, house, apartment) VALUES
-('Penny', 'Smith', '+ 1 416 572 3771', 'South', 'First Avenue', 1, 10),
-('Randy', 'Brown', '+ 1 416 568 8452', 'West', 'Spring St', 2, 35),
-('Oliver', 'Thompson', '+ 1 416 782 5648', 'East', 'Five Avenue', 77, 14),
-('James', 'Twist', '+ 1 416 752 1224', 'South', 'Corn St', 24, 89),
-('Hellen', 'Bellora', '+ 1 416 555 4568', 'South', 'First Avenue', 11, 85),
-('Kate', 'Evans', '+ 1 416 321 3211', 'West', 'Spring St', 123, 52),
-('Jennifer', 'Radriges', '+ 1 416 321 1232', 'West', 'Roll St', 76, 44),
-('Mario', 'Gordon', '+ 1 416 122 4554', 'East', 'Five Avenue', 21, 91),
-('Bella', 'Lorenson', '+ 1 416 758 1667', 'North', 'Green Avenue', 23, 67),
-('Erica', 'Visputchu', '+ 1 416 765 8582', 'South', 'First Avenue', 62, 44),
-('Henry', 'Smith', '+ 1 416 657 5528', 'South', 'Brown St', 15, 56),
-('Oscar', 'Rild', '+ 1 416 624 3643', 'South', 'First Avenue', 5, 13),
-('William', 'Frankston', '+ 1 416 303 8181', 'North', 'Cascade Rd', 18, 88),
-('Peter', 'Hall', '+ 1 416 466 7562', 'North', 'Cascade Rd', 17, 7),
-('Ada', 'Watson', '+ 1 416 114 7812', 'South', 'Elma St', 18, 9);
+('Penny', 'Smith', '+ 7 927 572 3771', 'Южный', 'Первая', 1, 10),
+('Randy', 'Brown', '+ 7 927 568 8452', 'Восточный', 'Третья', 2, 35),
+('Oliver', 'Thompson', '+ 7 927 782 5648', 'Восточный', 'Третья', 77, 14),
+('James', 'Twist', '+ 7 927 752 1224', 'Южный', 'Третья', 24, 89),
+('Hellen', 'Bellora', '+ 7 927 555 4568', 'Южный', 'Вторая', 11, 85),
+('Kate', 'Evans', '+ 7 927 321 3211', 'Восточный', 'Третья', 123, 52),
+('Jennifer', 'Radriges', '+ 7 927 321 1232', 'Южный', 'Третья', 76, 44),
+('Mario', 'Gordon', '+ 7 927 122 4554', 'Восточный', 'Первая', 21, 91),
+('Bella', 'Lorenson', '+ 7 927 758 1667', 'Северный', 'Четвертая', 23, 67),
+('Erica', 'Visputchu', '+ 7 927 765 8582', 'Южный', 'Вторая', 62, 44),
+('Henry', 'Smith', '+ 7 927 657 5528', 'Восточный', 'Четвертая', 15, 56),
+('Oscar', 'Rild', '+ 7 927 624 3643', 'Южный', 'Первая', 5, 13),
+('William', 'Frankston', '+ 7 927 303 8181', 'Южный', 'Вторая', 18, 88),
+('Peter', 'Hall', '+ 7 927 466 7562', 'Северный', 'Первая', 17, 7),
+('Ada', 'Watson', '+ 7 927 114 7812', 'Южный', 'Вторая', 18, 9);
