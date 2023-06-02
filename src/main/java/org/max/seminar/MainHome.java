@@ -9,7 +9,7 @@ import org.hibernate.query.Query;
 
 import javax.persistence.metamodel.EntityType;
 
-public class Main {
+public class MainHome {
     private static final SessionFactory ourSessionFactory;
 
     static {

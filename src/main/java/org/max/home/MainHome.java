@@ -1,15 +1,17 @@
-package org.max.demo;
+package org.max.home;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Metamodel;
+import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.query.Query;
 
 import javax.persistence.metamodel.EntityType;
 
-public class Main {
+import java.util.Map;
+
+public class MainHome {
     private static final SessionFactory ourSessionFactory;
 
     static {

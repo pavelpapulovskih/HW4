@@ -1,17 +1,22 @@
 package org.max.demo;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.sql.*;
 
+/**
+ * Демонстрация взаимодействия с СУБД через механизмы java.sql
+ */
 public class ConnectionTest {
 
+    //Объект подключения
     private static Connection connection;
     @BeforeAll
     static void init() throws SQLException {
-        connect("connectiontest.db");
+        connect("demo_simple_sql.db");
         createTable("CREATE TABLE IF NOT EXISTS employee_info\n" +
                 "(id integer PRIMARY KEY,\n" +
                 "first_name text NOT NULL,\n" +
@@ -31,10 +36,12 @@ public class ConnectionTest {
         insertEmployeeValue(3,"IAN",90,3);
     }
 
-
+    //Создание подключений к СУБД
     private static void connect(String name) {
         try {
+            //Регистрация драйвера
             Class.forName("org.sqlite.JDBC");
+            //Создание подключения
             connection = DriverManager.getConnection("jdbc:sqlite:"+name);
         } catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
@@ -43,6 +50,7 @@ public class ConnectionTest {
         System.out.println("Opened database successfully");
     }
 
+    //Создание произвольной таблицы
     private static void createTable(String sql) {
         try{
             Statement stmt = connection.createStatement();
@@ -52,6 +60,7 @@ public class ConnectionTest {
         }
     }
 
+    //Метод добавление записи в таблицу employee_info
     private static void insertEmployeeInfo(Integer id, String firstName, String lastName, String phone) {
         String sql = "INSERT INTO employee_info(id, first_name, last_name, phone_number) VALUES(?,?,?,?)";
         try{
@@ -66,6 +75,7 @@ public class ConnectionTest {
         }
     }
 
+    //Метод добавление записи в таблицу employee
     private static void insertEmployeeValue(Integer id, String name, double capacity, Integer info) {
         String sql = "INSERT INTO employee(id, name, capacity, info_id) VALUES(?,?,?,?)";
         try{
@@ -80,26 +90,32 @@ public class ConnectionTest {
         }
     }
 
+    //Тест для демонстрации SQL запроса
     @Test
     void select() {
-        String sql = "SELECT * FROM employees";
+        String sql = "SELECT * FROM employee";
 
         try {
             Statement stmt  = connection.createStatement();
             ResultSet rs    = stmt.executeQuery(sql);
-
+            Assertions.assertNotNull(rs);
+            int countTableSize = 0;
             // loop through the result set
             while (rs.next()) {
+                countTableSize++;
                 System.out.println(rs.getInt("id") +  "\t" +
                         rs.getString("name") + "\t" +
                         rs.getDouble("capacity"));
             }
+            Assertions.assertEquals(3,countTableSize);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+
     }
 
 
+    //Очищаем таблицы после тесового подключения
     @AfterAll
     static void close() throws SQLException {
         String sqlDeleteEmployee = "DELETE FROM employee";
@@ -113,6 +129,7 @@ public class ConnectionTest {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        //Всегда закрываем ресурсы
         connection.close();
         System.out.println("Closed database successfully");
     }
