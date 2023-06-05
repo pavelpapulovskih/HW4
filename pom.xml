@@ -16,6 +16,7 @@
         <sql.version>3.42.0.0</sql.version>
         <hibernate-version>5.0.1.Final</hibernate-version>
         <flyway.version>8.5.13</flyway.version>
+        <surefire.version>2.22.2</surefire.version>
     </properties>
 
     <!-- Архивирование -->
@@ -96,12 +97,8 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>17</source>
-                    <target>17</target>
-                    <compilerArgs>--enable-preview</compilerArgs>
-                </configuration>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
             </plugin>
         </plugins>
     </build>
