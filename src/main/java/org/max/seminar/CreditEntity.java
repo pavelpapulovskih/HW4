@@ -13,6 +13,26 @@ public class CreditEntity {
     private String summ;
     private String number;
     private String status;
+    private short client;
+    private short employee;
+
+    @Column(name = "client_id")
+    public short getClient() {
+        return client;
+    }
+
+    public void setClient(short client) {
+        this.client = client;
+    }
+
+    @Column(name = "employee_id")
+    public short getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(short employee) {
+        this.employee = employee;
+    }
 
     @Id
     @Column(name = "credit_id")
@@ -89,11 +109,11 @@ public class CreditEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CreditEntity that = (CreditEntity) o;
-        return creditId == that.creditId && Objects.equals(balance, that.balance) && Objects.equals(openDate, that.openDate) && Objects.equals(closeDate, that.closeDate) && Objects.equals(summ, that.summ) && Objects.equals(number, that.number) && Objects.equals(status, that.status);
+        return creditId == that.creditId && Objects.equals(balance, that.balance) && Objects.equals(openDate, that.openDate) && Objects.equals(closeDate, that.closeDate) && Objects.equals(summ, that.summ) && Objects.equals(number, that.number) && Objects.equals(status, that.status) && Objects.equals(client, that.client) && Objects.equals(employee, that.employee);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(creditId, balance, openDate, closeDate, summ, number, status);
+        return Objects.hash(creditId, balance, openDate, closeDate, summ, number, status, client, employee);
     }
 }

@@ -1,5 +1,6 @@
 package org.max.seminar;
 
+import org.hibernate.query.Query;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +21,9 @@ public class CurrentTest extends AbstractTest {
         while (rs.next()) {
             countTableSize++;
         }
+        final Query query = getSession().createSQLQuery(sql).addEntity(CurrentEntity.class);
         //then
         Assertions.assertEquals(1, countTableSize);
+        Assertions.assertEquals(1, query.list().size());
     }
 }

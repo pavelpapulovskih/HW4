@@ -13,6 +13,26 @@ public class DebitEntity {
     private String percent;
     private String status;
     private String number;
+    private short client;
+    private short employee;
+
+    @Column(name = "client_id")
+    public short getClient() {
+        return client;
+    }
+
+    public void setClient(short client) {
+        this.client = client;
+    }
+
+    @Column(name = "employee_id")
+    public short getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(short employee) {
+        this.employee = employee;
+    }
 
     @Id
     @Column(name = "debit_id")
@@ -89,11 +109,11 @@ public class DebitEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DebitEntity that = (DebitEntity) o;
-        return debitId == that.debitId && Objects.equals(typeName, that.typeName) && Objects.equals(balance, that.balance) && Objects.equals(openDate, that.openDate) && Objects.equals(percent, that.percent) && Objects.equals(status, that.status) && Objects.equals(number, that.number);
+        return debitId == that.debitId && client == that.client && employee == that.employee && Objects.equals(typeName, that.typeName) && Objects.equals(balance, that.balance) && Objects.equals(openDate, that.openDate) && Objects.equals(percent, that.percent) && Objects.equals(status, that.status) && Objects.equals(number, that.number);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(debitId, typeName, balance, openDate, percent, status, number);
+        return Objects.hash(debitId, typeName, balance, openDate, percent, status, number, client, employee);
     }
 }
