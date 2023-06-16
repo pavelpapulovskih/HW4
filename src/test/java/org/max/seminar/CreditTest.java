@@ -1,6 +1,7 @@
 package org.max.seminar;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.junit.jupiter.api.*;
 
@@ -63,16 +64,20 @@ public class CreditTest extends AbstractTest {
     void deleteCredit_whenValid_shouldDelete() {
         //given
         final Query query = getSession()
-                .createSQLQuery("SELECT * FROM credit WHERE credit_id="+2).addEntity(CreditEntity.class);
+                .createSQLQuery("SELECT * FROM credit WHERE credit_id=" + 2).addEntity(CreditEntity.class);
         Optional<CreditEntity> creditEntity = (Optional<CreditEntity>) query.uniqueResultOptional();
         Assumptions.assumeTrue(creditEntity.isPresent());
         //when
-        getSession().beginTransaction();
-        getSession().delete(creditEntity.get());
-        getSession().getTransaction().commit();
+        Session session = getSession();
+        session.beginTransaction();
+        session.delete(creditEntity.get());
+/*        getSession().createQuery("delete from CreditEntity where creditId = :id")
+                .setParameter("id", 2)
+                .executeUpdate();*/
+        session.getTransaction().commit();
         //then
         final Query queryAfterDelete = getSession()
-                .createSQLQuery("SELECT * FROM credit WHERE credit_id="+2).addEntity(CreditEntity.class);
+                .createSQLQuery("SELECT * FROM credit WHERE credit_id=" + 2).addEntity(CreditEntity.class);
         Optional<CreditEntity> creditEntityAfterDelete = (Optional<CreditEntity>) queryAfterDelete.uniqueResultOptional();
         Assertions.assertFalse(creditEntityAfterDelete.isPresent());
     }
